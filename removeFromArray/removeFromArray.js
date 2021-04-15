@@ -23,13 +23,19 @@ const removeFromArray = function (x) {
   // }
 
   // Test 4 - ignore non present values, but still works
+  // for (let i = 0; i < x.length; i++) {
+  //   if (x[i] === 2) {
+  //     x.splice(i, 1); // this tells to remove 1
+  //     i--;
+  //     return [...x];
+  //   }
+  // }
+  // Test 5 - remove all elements from array - returns []
   for (let i = 0; i < x.length; i++) {
-    if (x[i] === 2) {
-      x.splice(i, 1); // this tells to remove 1
-      i--;
-      return [...x];
-    }
+    x.splice(i);
+    i--;
+    return x;
   }
 };
-console.log(removeFromArray([1, 2, 3, 4], 7, "tacos", 2));
+console.log(removeFromArray([1, 2, 3, 4], 1, 2, 3, 4));
 module.exports = removeFromArray;
