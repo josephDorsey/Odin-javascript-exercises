@@ -4,10 +4,10 @@ describe("removeFromArray", function () {
   xit("removes a single value", function () {
     expect(removeFromArray([1, 2, 3, 4], 3)).toEqual([1, 2, 4]);
   });
-  it("removes multiple values", function () {
+  xit("removes multiple values", function () {
     expect(removeFromArray([1, 2, 3, 4], 3, 2)).toEqual([1, 4]);
   });
-  xit("ignores non present values", function () {
+  it("ignores non present values", function () {
     expect(removeFromArray([1, 2, 3, 4], 7, "tacos")).toEqual([1, 2, 3, 4]);
   });
   xit("ignores non present values, but still works", function () {
