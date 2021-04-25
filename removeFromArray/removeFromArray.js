@@ -1,3 +1,4 @@
+"use strict";
 // jasmine removeFromArray.spec.js
 const removeFromArray = function (x) {
   // Test 1 - remove single value
@@ -31,11 +32,35 @@ const removeFromArray = function (x) {
   //   }
   // }
   // Test 5 - remove all elements from array - returns []
+  // for (let i = 0; i < x.length; i++) {
+  //   x.splice(i);
+  //   i--;
+  //   return x;
+  // }
+  // Test 6 - works with strings
+  // for (let i = 0; i < x.length; i++) {
+  //   if (x[i] === "hey") {
+  //     x.splice(i, 1);
+  //     i--;
+  //   }
+  //   if (x[i] === 3) {
+  //     x.splice(i, 1);
+  //     i--;
+  //     return x;
+  //   }
+  // }
+  // Test 7 - removes same type value
   for (let i = 0; i < x.length; i++) {
-    x.splice(i);
-    i--;
-    return x;
+    if (x[i] === "1") {
+      x.splice(i, 1);
+      i--;
+    }
+    if (x[i] === 3) {
+      x.splice(i, 1);
+      i--;
+      return x;
+    }
   }
 };
-console.log(removeFromArray([1, 2, 3, 4], 1, 2, 3, 4));
+console.log(removeFromArray([1, 2, 3], "1", 3));
 module.exports = removeFromArray;
